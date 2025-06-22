@@ -35,5 +35,5 @@ This is a simple, animated, interactive rating component built using HTML, CSS, 
 - **CSS** – for styling and entrance animation
 - **JavaScript** – for logic, interactivity, and DOM manipulation
 
-
+Created by Ameyaw Williams Kyere
 
