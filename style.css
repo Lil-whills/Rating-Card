@@ -1,0 +1,330 @@
+/* Google Fonts in the style-guide import */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Base font size setup - We use 62.5% to make rem calculations easier (1rem = 10px) */
+html {
+  font-size: 62.5%; /* This makes 1rem = 10px for easier math */
+}
+
+/* ===== CSS CUSTOM PROPERTIES (VARIABLES) =====
+   We defined these color variables to maintain consistency across our design
+   and make it easy to update the color scheme if needed */
+:root {
+  --background-color: hsl(216, 12%, 8%);        /* Dark blue-gray background */
+  --container-color: hsl(216, 12%, 54%);        /* Medium gray for footer */
+  --title-color: hsl(0, 100%, 100%);           /* Pure white for headings */
+  --card-background-color: hsl(213, 19%, 18%);  /* Dark blue-gray for cards */
+  --description-color: hsl(217, 12%, 63%);      /* Light gray for descriptions */
+  --icon-color: hsla(0, 2%, 31%, 0.5);         /* Semi-transparent gray for icons */
+}
+
+/* ===== GLOBAL RESET =====
+   We reset default browser styles to ensure consistent appearance across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Makes width/height calculations include padding and border */
+}
+
+/* ===== BODY STYLES =====
+   Base styling for the entire page */
+body {
+  background-color: var(--background-color);
+  color: var(--title-color);
+  font-family: "Overpass", sans-serif; /* The provided Google Font in the style-guide */
+  font-size: 1.5rem; /* 15px when html font-size is 62.5% */
+}
+
+/* ===== MAIN CONTAINER =====
+   Centers our rating component both horizontally and vertically on the page */
+.container {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+  line-height: 1.6rem;     /* Good readability spacing */
+}
+
+/* ===== CARD COMPONENT =====
+   The main container for both rating and thank you states */
+.card {
+  width: 35rem;  /* 350px */
+  height: 40rem; /* 400px */
+  background-color: var(--card-background-color);
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  border-radius: 2rem; /* Rounded corners for modern look */
+  align-items: center;
+}
+
+/* ===== ICON CONTAINER =====
+   Holds the star icon with proper spacing and positioning */
+.icon-container {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: left; /* Left-align the icon */
+  align-items: start;
+  margin-bottom: 5rem;
+  padding-left: 2rem; /* Indent from left edge */
+}
+
+/* ===== STAR ICON STYLING =====
+   Creates a circular background for the star icon with subtle shadow */
+.icon-star {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%; /* Makes it circular */
+  display: block;
+  position: static;
+  align-items: center;
+  justify-content: center;
+  background-color: #02020357; /* Semi-transparent dark background */
+  box-shadow: 0rem 0rem 0rem 1rem rgba(2, 2, 2, 0.13); /* Soft outer glow */
+  margin-top: 4.8rem;
+}
+
+/* ===== TITLE STYLING =====
+   Styles for the main heading */
+.title-container {
+  text-align: left;
+  font-weight: 400;
+  margin-bottom: 0rem;
+  color: var(--title-color);
+}
+
+.title-container h1 {
+  font-size: 2.4rem; /* 24px */
+  font-weight: 700;   /* Bold text */
+  text-align: left;
+  justify-content: left;
+  margin-right: 11.2rem; /* Spacing from right edge */
+  margin-bottom: 0.8rem;
+  animation: slideUp 0.8s ease-out 0.3s forwards;
+}
+
+/* ===== DESCRIPTION TEXT =====
+   Styles for the explanatory text */
+.description-container {
+  width: 100%;
+  padding: 0 2rem; /* Horizontal padding */
+  text-align: left;
+  font-size: 1.44rem; /* Slightly smaller than body text */
+  color: var(--description-color); /* Lighter gray color */
+  animation: slideUp 0.8s ease-out 0.3s forwards;
+}
+
+.description-container p {
+  margin-bottom: 1.6rem;
+  margin-left: 0.8rem;
+  font-weight: 400; /* Normal weight */
+}
+
+/* ===== RATING BUTTONS CONTAINER =====
+   Flexbox layout for the 5 rating buttons */
+.rating-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem; /* Space between buttons */
+  animation: slideInLeft 0.8s ease-out 0.6s forwards;
+}
+
+/* ===== INDIVIDUAL RATING BUTTONS =====
+   Circular buttons for ratings 1-5 with hover and focus states */
+button.rating {
+  background-color: #232a34; /* Dark gray background */
+  color: #fff;
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%; /* Circular shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none; /* Remove default button border */
+  box-shadow: 0 0 1rem 0 rgba(2, 2, 2, 0.13); /* Subtle shadow */
+  font-size: 1.92rem;
+  cursor: pointer; /* Show hand cursor on hover */
+}
+
+/* ===== RATING BUTTON HOVER EFFECT =====
+   We added an orange hover state for better user feedback */
+button:hover {
+  background-color: #e75e0f; /* Orange background */
+  color: #020203; /* Dark text for contrast */
+}
+
+/* ===== RATING BUTTON FOCUS/SELECTED STATE =====
+   White background when button is selected */
+button.rating:focus {
+  background-color: #fff;
+  color: #020203;
+}
+
+/* ===== SUBMIT BUTTON =====
+   Main call-to-action button with orange styling */
+.submit-button {
+  background-color: #e75e0f; /* Orange to match our theme */
+  color: #020203;
+  width: 80%; /* Takes up most of the card width */
+  height: 4.8rem;
+  border-radius: 5rem; /* Very rounded corners */
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 700; /* Bold text */
+  cursor: pointer;
+  margin-top: 2rem;
+  animation: slideUp 0.8s ease-out 0.3s forwards;
+}
+
+/* ===== SUBMIT BUTTON HOVER =====
+   Lighter color on hover for visual feedback */
+button.submit-button:hover {
+  background-color: #f5f3ef; /* Light cream color */
+}
+
+/* ===== UTILITY CLASS FOR HIDING ELEMENTS =====
+   We use this class to show/hide different states with JavaScript */
+.hidden {
+  display: none;
+  position: relative;
+}
+
+/* ===== THANK YOU PAGE ELEMENTS =====
+   Specific styling for the thank you state */
+
+/* Thank you illustration sizing and positioning */
+.illustration-thank-you {
+  width: 60%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+/* Selected rating display message */
+.thank-you-message {
+  text-align: center;
+  font-size: 1.92rem;
+  color: #e75e0f; /* Orange text to match theme */
+  margin-top: 2rem;
+  width: 24rem;
+  height: 2.4rem;
+  display: flex;
+  background-color: rgba(2, 2, 2, 0.13); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem; /* Rounded container */
+  box-shadow: 0 0 0 0.48rem rgba(2, 2, 2, 0.13); /* Subtle border effect */
+  animation: slideInLeft 0.8s ease-out 0.6s forwards;
+}
+
+/* Thank you description text */
+.thank-you-description {
+  font-size: 1.44rem;
+  color: var(--description-color);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Thank you main title */
+.thank-you-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  text-align: center;
+  color: var(--title-color);
+  margin-top: 2rem;
+}
+.rate{
+  position:absolute;
+  right: 1.5rem;
+  bottom: 5rem;
+  border-radius: 2rem;
+  border: none;
+  width: 13rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem;
+  cursor: pointer;
+}
+.rate:active {
+  background-color: aqua;
+}
+/* ===== FOOTER STYLING =====
+   Attribution footer with consistent styling */
+footer {
+  background-color: var(--container-color);
+  padding: 1.6rem;
+  text-align: center;
+  border-top: 0.1rem solid var(--background-color);
+}
+
+@keyframes slideUp {
+      from{
+        opacity: 1;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from{
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+/* ===== RESPONSIVE DESIGN =====
+   We included mobile-first responsive styles for screens smaller than 600px */
+@media (max-width: 37.5rem) { /* 600px */
+  
+  /* Adjust container for mobile */
+  .container {
+    padding: 2rem; /* Add padding on mobile */
+  }
+  
+  /* Make card responsive */
+  .card {
+    width: 100%; /* Full width on mobile */
+    height: auto; /* Auto height for content */
+    padding: 2rem;
+  }
+  
+  /* Center icon on mobile */
+  .icon-container {
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  
+  /* Adjust title size for mobile */
+  .title-container h1 {
+    font-size: 1.92rem; /* Slightly smaller */
+    margin-right: 0; /* Remove right margin */
+  }
+  
+  /* Adjust description text size */
+  .description-container p {
+    font-size: 1.28rem;
+  }
+  
+  /* Make rating buttons smaller on mobile */
+  button.rating {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.6rem;
+  }
+}

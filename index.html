@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Main container that centers our rating component on the page -->
+    <main class="container">
+      
+      <!-- RATING CARD: Initial state where users can select a rating -->
+      <!-- We use 'active' class to show this card initially -->
+      <div class="card active" id="rating-card">
+        
+        <!-- Star icon container - provides visual context for rating -->
+        <div class="icon-container">
+          <img
+            src="images/icon-star.svg"
+            alt="icon-star"
+            class="icon-star"
+          />
+        </div>
+        
+        <!-- Main heading asking for user feedback -->
+        <div class="title-container">
+          <h1>How did we do?</h1>
+        </div>
+        
+        <!-- Description text explaining what we're asking for -->
+        <div class="description-container">
+          <p>
+            Please let us know how we did with your support request. All
+            feedback is appreciated to help us improve our offering!
+          </p>
+        </div>
+        
+        <!-- Rating buttons container - holds all 5 rating options -->
+        <!-- Each button represents a rating from 1 to 5 -->
+        <div class="rating-container">
+          <button class="rating">1</button>
+          <button class="rating">2</button>
+          <button class="rating">3</button>
+          <button class="rating">4</button>
+          <button class="rating">5</button>
+        </div>
+        
+        <!-- Submit button to confirm the selected rating -->
+        <button class="submit-button">Submit</button>
+      </div>
+      
+      <!-- THANK YOU CARD: Hidden initially, shown after submission -->
+      <!-- We use 'hidden' class to hide this card until needed -->
+      <div class="card hidden" id="thanks-card">
+        <a href="index.html">
+          <button class="rate">Back to Rating</button>
+        </a>      
+        <!-- Thank you illustration container -->
+        <div class="icon-container">
+          <img
+            src="images/illustration-thank-you.svg"
+            alt="illustration-thank-you"
+            class="illustration-thank-you"
+          />
+        </div>
+        
+        <!-- Thank you content wrapper -->
+        <div class="thank-you">
+          <!-- Dynamic message showing selected rating (updated by JavaScript) -->
+          <p class="thank-you-message">You selected 4 out of 5</p>
+          <!-- Thank you heading -->
+          <h3 class="thank-you-title">Thank you!</h3>
+        </div>
+        
+        <!-- Additional thank you description -->
+        <div class="description-container">
+          <p class="thank-you-description">
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don't hesitate to get in touch!
+          </p>
+        </div>
+        
+      </div>
+      
+    </main>
+    
+    <!-- Footer with attribution links -->
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>. 
+        Coded by <a href="#">Ameyaw Williams</a>.
+      </div>
+    </footer>
+    
+    <!-- Link to our JavaScript file - placed at end for better performance -->
+    <script src="script.js"></script>
+  </body>
+</html>
